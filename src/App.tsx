@@ -8,7 +8,6 @@ import Pixels from "./components/pages/Pixels";
 import GeneratePixel from "./components/pages/GeneratePixel";
 
 export default function App() {
-  const { user: currentUser } = useSelector((state: any) => state.auth);
 
   return (
     <div>
