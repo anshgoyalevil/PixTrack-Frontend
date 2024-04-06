@@ -27,9 +27,12 @@ const getPixelStat = (params: any) => {
   });
 };
 
-const deletePixel = ({ pixelId }: any) => {
-  return axios.post(API_URL + "deletePixel", pixelId, {
+const deletePixel = (params: any) => {
+  return axios.get(API_URL + "deletePixel", {
     headers: authHeader(),
+    params: {
+      trackId: params
+    }
   });
 };
 
