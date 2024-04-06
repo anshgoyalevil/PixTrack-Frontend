@@ -18,6 +18,15 @@ const getAllPixels = (params: any) => {
   });
 };
 
+const getPixelStat = (params: any) => {
+  return axios.get(API_URL + "pixelStat", {
+    headers: authHeader(),
+    params: {
+      trackId: params
+    }
+  });
+};
+
 const deletePixel = ({ pixelId }: any) => {
   return axios.post(API_URL + "deletePixel", pixelId, {
     headers: authHeader(),
@@ -34,4 +43,4 @@ const generatePixel = (subject: any) => {
   );
 };
 
-export { deletePixel, getAllPixels, generatePixel };
+export { deletePixel, getAllPixels, generatePixel, getPixelStat };

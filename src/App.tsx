@@ -3,12 +3,11 @@ import NavBar from "./components/Navbar";
 import { NavBarLinks } from "./components/data/NavBarLinks";
 import { Login } from "./components/pages/Login";
 import { Register } from "./components/pages/Register";
-import { useSelector } from "react-redux";
 import Pixels from "./components/pages/Pixels";
 import GeneratePixel from "./components/pages/GeneratePixel";
+import PixelStat from "./components/pages/PixelStat";
 
 export default function App() {
-
   return (
     <div>
       <NavBar links={NavBarLinks.links} />
@@ -18,6 +17,7 @@ export default function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/pixels" element={<Pixels />} />
           <Route path="/generate" element={<GeneratePixel />} />
+          <Route path="/stats/:trackId" element={<PixelStat />} />
         </Routes>
       </div>
     </div>
