@@ -31,7 +31,7 @@ export function PixelTimelineTrack({ data }: dataProps) {
         pt={2}
       >
         <Text color="dimmed" size="sm">
-          {item?.client_ip}
+          {`IP Address: ${item?.client_ip}`}
         </Text>
         <Text size="xs" mt={4}>
           {formattedDate}
