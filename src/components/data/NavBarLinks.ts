@@ -1,7 +1,7 @@
 export const NavBarLinks = {
   links: [
     {
-      link: "/home",
+      link: "/",
       label: "Home",
     },
   ],
