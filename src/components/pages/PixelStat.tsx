@@ -6,6 +6,7 @@ import {
   Title,
   Loader,
   Center,
+  Text
 } from "@mantine/core";
 import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
@@ -14,7 +15,6 @@ import { PixelTimelineTrack } from "../fragments/PixelStat/PixelTrackTimeline";
 import { InfoCard } from "../fragments/PixelStat/InfoCard";
 
 export default function PixelStat() {
-
   const [info, setInfo] = useState<any>({
     subject: "",
     _id: "",
@@ -96,7 +96,14 @@ export default function PixelStat() {
               mb="md"
               breakpoints={[{ maxWidth: "sm", cols: 1 }]}
             >
-              <PixelTimelineTrack data={info.visits} />
+              {info.visits.length === 0 ? (
+                <Text mt="lg">
+                No Tracking Data Currently. Maybe, email is not yet opened.
+                </Text>
+              ) : (
+                <PixelTimelineTrack data={info.visits} />
+              )}
+
               <Grid gutter="md">
                 <Grid.Col>
                   <InfoCard data={statInfoData} />

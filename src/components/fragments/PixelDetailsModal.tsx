@@ -40,7 +40,7 @@ export default function PixelDetailsModal({ data }: newPixelDetailsProps) {
         }
         mb={5}
       />
-      <Prism language="tsx">{data.html}</Prism>
+      <Prism language="markup">{data.html}</Prism>
     </>
   );
 }

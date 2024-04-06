@@ -1,4 +1,6 @@
 import { Card, Title, createStyles, rem, Text } from "@mantine/core";
+import { Prism } from "@mantine/prism";
+import { API_URL } from "../../../common/Constants";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -57,7 +59,6 @@ export function InfoCard({ data }: ResultProps) {
 
   return (
     <Card withBorder radius="md" p="md" className={classes.card}>
-
       <Card.Section pt="xs" pl="md" pr="md" pb="xs">
         <Title className={classes.title}>
           Pixel{" "}
@@ -92,9 +93,24 @@ export function InfoCard({ data }: ResultProps) {
         <Title className={classes.title}>
           Pixel{" "}
           <Text component="span" className={classes.highlight} inherit>
-            ID :
+            Link :
+            <br></br>
           </Text>
-          &nbsp;&nbsp;&nbsp;{`${data._id}`}
+          &nbsp;&nbsp;&nbsp;
+          {<Prism language="tsx">{`${API_URL}track/${data._id}`}</Prism>}
+        </Title>
+      </Card.Section>
+
+      <Card.Section pt="xs" pl="md" pr="md" pb="xs">
+        <Title className={classes.title}>
+          Pixel{" "}
+          <Text component="span" className={classes.highlight} inherit>
+            Code :
+            <br></br>
+          </Text>
+          &nbsp;&nbsp;&nbsp;
+          {<Prism language="markup">{`<img src="${API_URL}track/${data._id}" 
+alt="pixel" />`}</Prism>}
         </Title>
       </Card.Section>
     </Card>
